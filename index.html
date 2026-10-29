@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10171b" />
+    <title>万族棋域 · 交互灰盒</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">LR</span><div><strong>万族棋域</strong><small>LEGION REALMS · 交互灰盒</small></div></div>
+        <div class="top-actions">
+          <button id="style-toggle" class="quiet">材质：彩绘</button>
+          <button id="camera-reset" class="quiet">重置视角</button>
+          <button id="demo-load" class="quiet">包围演示</button>
+          <button id="restart">开始新局</button>
+        </div>
+      </header>
+      <main>
+        <aside class="panel left-panel">
+          <section id="match-status"></section>
+          <section id="selection-info" class="selection-info"></section>
+          <section class="rules-summary">
+            <h2>战场读法</h2>
+            <p><span class="legend liberty"></span>绿色格：可部署或移动</p>
+            <p><span class="legend threat"></span>红色标记：可攻击目标</p>
+            <p><span class="legend surrounded"></span>菱形标记：被围，能力受限</p>
+            <p>拖动旋转 · 滚轮缩放 · 右键平移<br />Esc 取消选择</p>
+          </section>
+          <section id="battle-log" class="battle-log"></section>
+        </aside>
+        <div id="viewport" aria-label="三维棋盘"></div>
+        <aside class="panel right-panel">
+          <section>
+            <h2>本局规则</h2>
+            <p>卡牌消耗指挥点。单位每回合可移动或攻击一次，新部署单位下回合行动。</p>
+            <p>相连棋子组没有可通行出口即被围。被围单位攻防下降，功能建筑停产，防御塔射程缩短。</p>
+          </section>
+          <section id="race-codex"></section>
+        </aside>
+      </main>
+      <footer class="hand-dock">
+        <div class="hand-heading"><span>当前手牌</span><small>选择卡牌后，再点击棋盘目标</small></div>
+        <div id="hand" class="hand"></div>
+        <button id="end-turn" class="end-turn">结束回合<span>↵</span></button>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
